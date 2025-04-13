@@ -48,6 +48,17 @@ agent2_card = {
 }
 
 # Main interface
+@app.route('/.well-known/agent.json')
+def root_agent_card():
+    # Return a combined card that represents the system
+    return jsonify({
+        "name": "A2A Demo System",
+        "description": "A demo system with two agents that can talk to each other",
+        "url": "/",
+        "version": "1.0.0",
+        "agents": [agent1_card, agent2_card]
+    })
+
 @app.route('/')
 def index():
     return render_template_string("""
