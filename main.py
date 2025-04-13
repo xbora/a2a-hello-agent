@@ -1,51 +1,9 @@
 from flask import Flask, jsonify, request, render_template_string
 import uuid
+from agent1 import agent_card as agent1_card
+from agent2 import agent_card as agent2_card
 
 app = Flask(__name__)
-
-# Agent 1 card
-agent1_card = {
-    "name": "Agent 1",
-    "description": "A simple agent that says hello",
-    "url": "/agent1",
-    "version": "1.0.0",
-    "authentication": {
-        "schemes": []
-    },
-    "defaultInputModes": ["text/plain"],
-    "defaultOutputModes": ["text/plain"],
-    "skills": [
-        {
-            "id": "say-hello",
-            "name": "Say Hello",
-            "description": "Says hello to Agent 2",
-            "tags": ["hello"],
-            "examples": ["hello agent 2"]
-        }
-    ]
-}
-
-# Agent 2 card
-agent2_card = {
-    "name": "Agent 2",
-    "description": "A simple agent that responds to hello",
-    "url": "/agent2",
-    "version": "1.0.0",
-    "authentication": {
-        "schemes": []
-    },
-    "defaultInputModes": ["text/plain"],
-    "defaultOutputModes": ["text/plain"],
-    "skills": [
-        {
-            "id": "respond-hello",
-            "name": "Respond Hello",
-            "description": "Responds to hello from Agent 1",
-            "tags": ["hello"],
-            "examples": ["hello back agent 1"]
-        }
-    ]
-}
 
 # Main interface
 @app.route('/.well-known/agent.json')
