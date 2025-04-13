@@ -45,7 +45,7 @@ All A2A communication uses the JSON-RPC 2.0 format for requests and responses, p
 
 1. Clone this repository
 2. Install dependencies: `pip install -r requirements.txt`
-3. Run the application: `python simplified_app.py`
+3. Run the application: `python main.py`
 4. Open your browser to the URL shown in the console (typically http://localhost:8080)
 5. Click the "Start Conversation" button to see the agents communicate
 
